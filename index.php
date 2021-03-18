@@ -10,12 +10,13 @@
 <body>
  <?php
 require 'Car.php';
+require 'Usuario.php';
 
  ?>
  <?php
 
  $bmw = new Car(); //instanciuacion
- $mercedes = new Car();
+ $mercedes = new Car("modelo-2");
  $audi = new Car();
 
 echo "Color del bmw: $bmw->color";
@@ -39,7 +40,7 @@ echo "Mercedez pitando: " .$mercedes->pitar();
 
 echo "<br/><br/> Probando el uso de la variable this";
 
-$carro1 = new Car;
+$carro1 = new Car("Modelo-4");
 $carro2 = new Car();
 
 $carro1->tieneCapota=false;
@@ -66,12 +67,46 @@ echo "<br/>El numero de galones que quedan en el tanque son : ". $gasolina . "ga
 
 echo "<br /<br /> Accediendo a un atributo publico";
 
-$carro3 ->setModelo ("audi") ;
+//$carro3 ->setModelo ("audi") ;
 
 //$carro3 -> modelo = "Audi";
 
 
 echo "<br/> Carro  \$3 tiene el siguiente modelo: ".$carro3 -> getModelo();
+
+
+echo "<br/><br/> Imprimiendo modelos <br/>". $bmw  -> getModelo(). "<br/>". $mercedes -> getModelo()."<br/>". 
+"<br/>". $audi -> getModelo()."<br/>".  "<br/>". $carro1 -> getModelo()."<br/>". "<br/>". $carro2 -> getModelo()."<br/>". "<br/>". $carro3 -> getModelo()."<br/>";
+
+
+$usuario1 = new Usuario("Jorge","Bermudez");
+echo $usuario1 ->getNombre();
+//$usuario1 ->setNombre("Juan");
+//$usuario1 ->apellido="Poli";
+
+$usuario1->saludar();
+
+
+//$usuario2  = new Usuario();
+//$usuario2  ->nombre="Jina";
+//$usuario2  ->apellido="Poli"; 
+//$usuario2 ->saludar();
+
+
+//$usuario3  = new Usuario();
+//$usuario3  ->nombre="Jhonny";
+//$usuario3  ->apellido="Ruiz"; 
+//$usuario3 ->registrar() -> enviarEmail();
+
+
+//$usuario4 = new Usuario();
+//$usuario4 ->setNombre("Alejandro");
+//echo "<br />". $usuario4 ->getNombre();
+
+$usuario5 = new Usuario("Mateo","Ortiz");
+
+
+echo $usuario5 -> getNombreCompleto();
 
  ?>
 </body>
