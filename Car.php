@@ -1,12 +1,12 @@
 <?php
-class Car
+abstract class Car
 {
 
     public $empresa;
     public $color = "rojo";
     public $tieneCapota = true;
-    public $contenidoTanque;
-    private $modelo;
+    protected $contenidoTanque;
+    public $modelo = "sin definir ";
 
 
     public function __construct($mod = "sin definir")
@@ -19,13 +19,22 @@ class Car
     }
 
 
+    abstract public function calcNumKilomConTanqueLleno();
+
+public function setContenidoTanque($volumen){
+
+$this -> contenidoTanque = $volumen;
+
+
+}
+
 
 
     private $modelos_permitidos = array("audi", "mazda", "mercedez", "lamborghini");
 
     public function pitar()
     {
-        return "beep";
+        return "beep soy un carro de modelo: ".$this -> modelo;
     }
 
     public function pedirRevision()
@@ -53,13 +62,13 @@ class Car
         return $this;
     }
 
-    public function getModelo()
+     public function getModelo()
     {
 
         return "el <b>" . __CLASS__ . "<b/> tiene el modelo:" . $this->modelo;
     }
 
-    public function setModelo($mod)
+     public function setModelo($mod)
     {
 
 
