@@ -16,6 +16,10 @@
   require 'Honda.php';
   require 'Toyota.php';
   require 'Minicar.php';
+  require 'Administrador.php';
+  require 'Financiero.php';
+  require 'RecursosHumanos.php';
+  require 'Programador.php';
 
   ?>
   <?php
@@ -85,11 +89,59 @@
 
 
   //$usuario1 = new Usuario("Jorge","Bermudez");
-  //echo $usuario1 ->getNombre();
+ // echo $usuario1 ->getNombre();
   //$usuario1 ->setNombre("Juan");
-  //$usuario1 ->apellido="Poli";
+ // $usuario1 ->setApellido("Poli");
+  //echo "<br />";
+ // echo "".$usuario1 ->getNombreCompleto();
+ // echo "<br />";
+ // echo "<br />";
 
-  //$usuario1->saludar();
+ //$Administrador = new Administrador("Jorge","Bermudez");
+ //echo $Administrador ->getNombre();
+ //$Administrador ->setNombre("Juan");
+// $Administrador ->setApellido("Poli");
+ echo "<br />";
+// echo "".$Administrador ->getNombreCompleto();
+ echo "<br />";
+ echo "<br />";
+// echo $Administrador ->mostrarSuCargo();
+ echo "<br />";
+ echo "<br />";
+// echo $Administrador->saludar();
+ echo "<br />";
+ echo "<br />";
+ // SE EJECUTO EL DE LA CLASE ADMINISTRADOR
+
+ $financiero = new Financiero("Phisi","fat");
+ echo $financiero ->setSalario("10000");
+ echo $financiero ->definirArea();
+
+ echo "<br />";
+
+ $recursoshumanos = new RecursosHumanos("alfa","beta");
+ echo $recursoshumanos ->setSalario("20000");
+ echo $recursoshumanos ->definirArea();
+ echo "<br />";
+ echo "<br />";
+  $usuario1 = new Programador("Edgar","Sarm");
+
+  $usuario1->agregarLenguajeDeProgramacionBackend("Python") ;
+  $usuario1->agregarLenguajeDeProgramacionBackend("C#") ;
+  $usuario1->agregarLenguajeDeProgramacionBackend("Java");
+echo "<br />";
+$usuario1->agregarLenguajeDeProgramacionFrontend("Javascript") ;
+$usuario1->agregarLenguajeDeProgramacionFrontend("Jquery") ;
+$usuario1->agregarLenguajeDeProgramacionFrontend("Angular") ;
+
+echo $usuario1->getNombreCompleto();
+echo "<br />";
+ $usuario1->mostrarLenguajesDeProgramacionBackend();
+
+ $usuario1->mostrarLenguajesDeProgramacionFrontend();
+
+
+
 
 
   //$usuario2  = new Usuario();
@@ -140,6 +192,7 @@ $carro1 -> setTieneLlantas(true);
 echo "<br />";
 echo "Tiene llantas? ".$carro1 -> getTieneLlantas();
 echo "<br />";
+
 
 
 

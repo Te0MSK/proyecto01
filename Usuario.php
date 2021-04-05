@@ -1,7 +1,7 @@
 <?php
 
 
-class Usuario
+ class Usuario
 {
 
     //Cuando declaramos la propiedas $nombre como privada al momento de compilar nos aparece el siguiente error:
@@ -16,6 +16,9 @@ class Usuario
 
     private $nombre;
     public $apellido;
+  
+
+  
 
 
     public function __construct($nom, $apell)
@@ -31,7 +34,7 @@ class Usuario
         return "<br />El nombre completo del usuario es:". $this ->nombre."  ". $this ->apellido;
 
     }
-    public function saludar()
+    final public function saludar()
     {
 
 
@@ -56,7 +59,6 @@ class Usuario
     public function setNombre($nom)
     {
 
-
         $this->nombre = $nom;
     }
 
@@ -65,4 +67,17 @@ class Usuario
 
         return "El nombre del Usuario es " . $this->nombre;
     }
+
+    public function setApellido($apell)
+    {
+        $this->apellido = $apell;
+    }
+    public function getApellido()
+    {
+
+        return "El apellido del Usuario es " . $this->apellido;
+    }
+
+    
+    
 }
